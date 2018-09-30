@@ -1,0 +1,37 @@
+<html>
+
+<body>
+  <p id="demo"></p>
+  <p id="demo1"></p>
+
+  <script>
+    var name1 = "Jeny";
+    var name = new String("Jeny");
+
+    document.getElementById("demo").innerHTML = (name1==name) + " double equal";
+    document.getElementById("demo1").innerHTML = (name1===name) + " triple equal";
+
+  </script>
+</body>
+
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+<body>
+
+<h2>Never Create Strings as objects.</h2>
+<p>Strings and objects cannot be safely compared.</p>
+
+<p id="demo"></p>
+<p id="demo1"></p>
+
+<script>
+var x = "John";              // x is a string
+var y = new String("John");  // y is an object
+document.getElementById("demo").innerHTML = (x===y) + " triple equal";
+document.getElementById("demo1").innerHTML = (x==y) + " double equal";
+</script>
+
+</body>
+</html> -->

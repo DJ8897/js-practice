@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <p>Click the button to display the date.</p>
+
+  <button onclick="displayDate(this)">The time is?</button>
+
+  <script>
+    function displayDate(id) {
+      if (id.innerHTML == 'The time is?') {
+        id.innerHTML = Date();
+      }
+      else {
+        id.innerHTML = 'The time is?';
+      }
+    }
+  </script>
+
+</body>
+
+</html>

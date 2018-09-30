@@ -1,0 +1,39 @@
+<!-- Find the leap years in a given range of years -->
+
+<html>
+
+<body>
+  Enter first range year: <input type="text"
+         id="startR">
+  <br><br>
+  Enter end range year: <input type="text"
+         id="endR">
+  <br><br>
+
+  <button id="btn"
+          onclick="checkLeap()">Click to check</button>
+  <br><br>
+
+  <p id="ans"></p>
+  <p id="count"></p>
+
+  <script>
+    function checkLeap() {
+      var startR = document.getElementById("startR").value;
+      var endR = document.getElementById("endR").value;
+      var arr = [];
+      var count = 0;
+
+      for (i = startR; i <= endR; i++) {
+        if (i % 4 === 0) {
+          arr.push(i);
+          count++;
+        }
+      }
+      document.getElementById("ans").innerHTML = "Leap Years are:<br>" + arr.join("<br>");
+      document.getElementById("count").innerHTML = "Total: " + count;
+    }
+  </script>
+</body>
+
+</html>

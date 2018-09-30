@@ -1,0 +1,20 @@
+<html>
+
+<body>
+  <p id="demo"></p>
+  <script>
+    var pr = '';
+    for (i = 1; i <= 10; i++) {
+      // var pr = '';
+      for (j = 1; j <= i; j++) {
+        pr += '*';
+      }
+
+      pr += "<br>";
+      console.log(pr);
+    }
+    document.getElementById("demo").innerHTML = pr;
+  </script>
+</body>
+
+</html>

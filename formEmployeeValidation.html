@@ -1,0 +1,71 @@
+<!-- make a form and try to validate it -->
+
+<html>
+
+<body>
+  <form id="employeeForm">
+    <h3>Employee Details Form</h3>
+
+    Title*: <select id="title">
+      <option>Mr</option>
+      <option>Mrs</option>
+      <option>Miss</option>
+    </select>
+    <br><br>
+    First Name*: <input type="text" id="fName" onfocusout="this.value = this.value.toTitleCase()">
+    <span id="fNameValidation">Please enter valid first name</span>
+    <br><br>
+    Last Name*: <input type="text" id="lName" onfocusout="this.value = this.value.toTitleCase()">
+    <span id="lNameValidation">Please enter valid last name</span>
+    <br><br>
+    Designation*: <input type="text" id="designation">
+    <span id="designationValidation">Please enter valid designation</span>
+    <br><br>
+    Age*: <input type="text" id="age" onkeypress="return allowNumbers(event)">
+    <span id="ageValidation">Please enter valid age</span>
+    <br><br>
+    Country*: <select id="country" onchange="countryCodesSelection()">
+      <option>India</option>
+      <option>UK</option>
+      <option>US</option>
+      <option>Canada</option>
+    </select>
+    <br><br>
+    Mobile no*: <label id="countryCodeLabel"></label><input type="text" id="mobileNo">
+    <span id="mobileNoValidation"></span>
+    <br><br>
+    Email: <input type="text" id="emailAddress">
+    <span id="emailAddressValidation">Email address must be of type "xyz@abc.aaa"</span>
+    <br><br>
+  </form>
+  <button onclick="submitEmployee()" id="submitEmployee">Submit</button>
+  <button onclick="resetEmployeeForm()" id="resetEmployee">Reset</button>
+  <button onclick="updateEmployee()" id="updateEmployee">Update</button>
+  <br><br>
+
+  <table border="1" style="width:100%" id="employeeTable">
+    <tr>
+      <th id="name">Name</th>
+      <th id="designation">Designation</th>
+      <th id="age">Age</th>
+      <th id="country">Country</th>
+      <th id="mobile">Mobile no</th>
+      <th id="email">Email</th>
+      <th id="del">Delete</th>
+      <th id="edit">Edit</th>
+    </tr>
+  </table>
+
+  <script src="formEmployeeValidation.js"></script>
+
+</body>
+
+</html>
+
+
+
+<!-- var select = document.getElementById("item1");
+select.onchange = function() {
+    var selIndex = select.selectedIndex;
+    var selValue = select.options(selIndex).innerHTML;
+}-->

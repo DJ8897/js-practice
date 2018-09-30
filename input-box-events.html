@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <script>
+    function focusOutInput() {
+      var x = document.getElementById("fname");
+      x.value = x.value.toUpperCase();
+      x.style.backgroundColor = "white";
+    }
+
+    function focusInput() {
+      document.getElementById("fname").style.backgroundColor = "yellow";
+    }
+  </script> 
+  Enter your first name: <input type="text" id="fname" onfocus="focusInput()" onfocusout="focusOutInput()">
+</body>
+
+</html>

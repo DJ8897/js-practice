@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <p> Numbers divisible by 5 between 1 to 100 and display only first 5 values. </p>
+  <p id="demo"></p>
+
+  <script>
+    var count = 0;
+    var i = 1;
+    while (i <= 100 && count <= 5) {
+      if (i % 5 == 0) {
+        document.getElementById("demo").innerHTML += i + "<br/>";
+        count++;
+      }
+      i++;
+    }
+  </script>
+</body>
+
+</html>

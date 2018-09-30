@@ -1,0 +1,40 @@
+<!-- For Each in array object -->
+
+<html>
+
+<body>
+  <p id="demo"></p>
+  <p id="demo1"></p>
+  <p id="demo2"></p>
+  <script>
+    var employee = [
+      { name: 'abc', lname: 'def', eid: '12' },
+      { name: 'jbfk', lname: 'jfguih', eid: '122' },
+      { name: 'ehuirh', lname: 'hegrui', eid: '123' },
+      { name: 'eufy', lname: 'iwhe9o', eid: '124' },
+      { name: 'jehfu', lname: 'jvbgui', eid: '125' }
+    ];
+
+    var no = [0, 4, 10, 5, 20];
+    // var n1 = [];
+    document.getElementById("demo1").innerHTML = no;
+    function displayName(value) {
+      // value.name = value.name + " " + value.lname + "<br>";
+      value.name = "Mr" + value.name;
+    }
+    function addNumbers(value, index, array) {
+      // n1.push(value + 5);
+      array[index] = value + 5;
+      // console.log(value);
+      // console.log(index);
+      // console.log(array);
+    }
+    employee.forEach(displayName);
+    no.forEach(addNumbers);
+
+    document.getElementById("demo").innerHTML = employee[0].name;
+    document.getElementById("demo2").innerHTML = no;
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!-- want to print the p tag from the div ele so use this -->
+
+<html>
+
+<body>
+  <p>Hi</p>
+
+  <div id="main">
+    <p>Hey</p>
+    <p>GM</p>
+  </div>
+
+  <p id="demo"></p>
+
+  <script>
+    var x = document.getElementById("main");
+    // alert(x); ===> will return [object HTMLDivElement]
+
+    var y = document.getElementsByTagName("p");
+    // alert(y); ===> will return [object HTMLCollection]
+    // alert(y[0]); ===> will return [object HTMLParagraphElement]
+    console.log(y);
+
+    document.getElementById("demo").innerHTML = 'First p tag of div: ' + y[0].innerHTML;
+
+  </script>
+</body>
+
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+
+<body>
+
+  <p>Hello World!</p>
+
+  <div id="main">
+    <p>The DOM is very useful.</p>
+    <p>This example demonstrates the <b>getElementsByTagName</b> method</p>
+  </div>
+
+  <p id="demo"></p>
+
+  <script>
+    var x = document.getElementById("main");
+    alert(x);
+    var y = x.getElementsByTagName("p");
+    alert(y[0]);
+    document.getElementById("demo").innerHTML =
+      'The first paragraph (index 0) inside "main" is: ' + y[0].innerHTML;
+  </script>
+
+</body>
+
+</html> -->

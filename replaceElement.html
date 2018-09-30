@@ -1,0 +1,21 @@
+<html>
+  <body>
+    <div id="div1">
+      <p id="p1">Hello</p>
+      <p id="p2">Hi</p>
+    </div>
+
+    <script>
+      var para = document.createElement("h1");
+      var txt = document.createTextNode("BYE");
+      para.appendChild(txt);
+
+      var d1 = document.getElementById("div1");
+      var p11 = document.getElementById("p1");
+
+      d1.replaceChild(para,p11);
+    </script>
+  </body>
+</html>
+
+<!-- not working in chrome directly but if we try it in try it yourself editior of w3 it will work -->

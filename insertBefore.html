@@ -1,0 +1,41 @@
+<html>
+  <body>
+    <div id="div1">
+      <p id="p1">HI</p>
+      <p id="p2">BYE</p>
+    </div>
+
+    <script>
+      var ele = document.createElement("h1");
+      var txt = document.createTextNode("this is h1");
+      ele.appendChild(txt);
+
+      var insertE = document.getElementById("div1");
+      var insertC = document.getElementById("p2");
+      insertE.insertBefore(ele,insertC);
+    </script>
+  </body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+<body>
+
+<div id="div1">
+<p id="p1">This is a paragraph.</p>
+<p id="p2">This is another paragraph.</p>
+</div>
+
+<script>
+var para = document.createElement("p");
+var node = document.createTextNode("This is new.");
+para.appendChild(node);
+
+var element = document.getElementById("div1");
+var child = document.getElementById("p1");
+element.insertBefore(para,child);
+</script>
+
+</body>
+</html> -->

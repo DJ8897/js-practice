@@ -1,0 +1,26 @@
+<!-- setting atribute and creating a new element by createElement method -->
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="div1">
+<p id="p1">This is a paragraph.</p>
+<p id="p2">This is another paragraph.</p>
+<p id="p3"></p>
+</div>
+
+<script>
+var para = document.createElement("jeny"); // var para = document.createElement("p");
+para.setAttribute("id","j");
+alert(para); // will return unknown HTML element
+var node = document.createTextNode("This is jeny's element.");
+alert(node); // will return [objectText]
+para.appendChild(node);
+var element = document.getElementById("div1");
+element.appendChild(para);
+</script>
+
+</body>
+</html>

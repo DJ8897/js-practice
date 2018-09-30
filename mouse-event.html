@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <div style="background-color: aqua; font-size: 16px; padding: 10px; width: 50%; text-align: center;" onmouseover="mouseOver(this)" onmouseout="onmouseOut(this)">
+    Come on me !!!!
+  </div>
+  <script>
+    function mouseOver(id) {
+      //id.innerHTML.style.box-shadow = "5px 10px #888888;"
+      id.style.boxShadow = "5px 10px #888888";
+      id.innerHTML = 'Get out !!!!';
+    }
+
+    function onmouseOut(id) {
+      id.innerHTML = 'Come over me !!!!';
+    }
+  </script>
+</body>
+
+</html>

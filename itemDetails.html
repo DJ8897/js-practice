@@ -1,0 +1,43 @@
+<html>
+
+<body>
+  <h3> Item Details Form </h3>
+
+  <form id="itemDetailsForm">
+    Item Name: <input type="text" id="itemNameInput" onfocusout="this.value=this.value.toTitleCase()">
+    <span id="itemNameValidation">Please enter valid Item Name</span>
+    <br><br>
+    Category: <select id="itemCategoryInput">
+      <option>Lingerie</option>
+      <option>Swimsuit</option>
+      <option>Clothing</option>
+    </select>
+    <br><br>
+    Retail Price: <input type="text" id="itemRetailPriceInput" onkeypress="return isNumber(event)" onfocusout="calculateItemWholesalePrice()">
+    <span id="itemRetialPriceValidation">Please enter valid Item Retail Price</span>
+    <br><br>
+    Wholesale Price: <input type="text" id="itemWholesalePriceInput" onkeypress="return isNumber(event)">
+    <span id="itemWholesalePriceValidation">Please enter valid Item Wholesale Price</span>
+    <br><br>
+  </form>
+
+  <button onclick="addItemDetails()" id="addItemBtn">Add</button>
+  <button onclick="updateItemDetails()" id="updateItemBtn">Update</button>
+  <button onclick="resetItemDetailsForm()" id="resetItemBtn">Reset</button>
+  <br><br>
+
+  <table id="itemDetailsTable" border="1" width="100%">
+    <tr>
+      <th id="itemName">Item Name</th>
+      <th id="itemCategory">Category</th>
+      <th id="itemRetailPrice">Retail Price</th>
+      <th id="itemWholesalePrice">Wholesale Price</th>
+      <th id="editItem">Edit</th>
+      <th id="deleteItem">Delete</th>
+    </tr>
+  </table>
+
+  <script src="itemDetails.js"></script>
+</body>
+
+</html>

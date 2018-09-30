@@ -1,0 +1,67 @@
+<html>
+
+<body>
+  <p id="demo"></p>
+  <p id="demo1"></p>
+
+  <p id="demo2"></p>
+  <p id="demo22"></p>
+
+  <p id="demo3"></p>
+  <p id="demo33"></p>
+
+  <p id="demo4"></p>
+  <p id="demo44"></p>
+
+  <p id="demo5"></p>
+  <p id="demo55"></p>
+
+  <p id="demo6"></p>
+  <p id="demo7"></p>
+  <p id="demo8"></p>
+  <p id="demo9"></p>
+  <p id="demo10"></p>
+  <p id="demo11"></p>
+
+  <script>
+    var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+    // document.getElementById("demo").innerHTML = "sort(): " + arr.sort(); //will not work for numericals value
+    // document.getElementById("demo1").innerHTML = "reverse(): " + arr.reverse(); //will not work for numericals value
+
+    var a = arr.pop();
+    document.getElementById("demo2").innerHTML = "pop(): on a variable returns the poped value: " + a;
+    document.getElementById("demo22").innerHTML = "pop(): " + arr + " will pop last value" + "<br><br>";
+
+    var b = arr.push(12);
+    document.getElementById("demo3").innerHTML = "push(): on a variable returns new length of the array: " + b ;
+    document.getElementById("demo33").innerHTML = "push(): " + arr + " will add a new value to last location." + "<br><br>";
+
+    var c = arr.shift();
+    document.getElementById("demo4").innerHTML = "shift(): return shifted element: " + c;
+    document.getElementById("demo44").innerHTML = "shift(): " + arr + "<br><br>";
+
+    var d = arr.unshift(1);
+    document.getElementById("demo5").innerHTML = "unshift(): on a variable returns new length of the array: " + d;
+    document.getElementById("demo55").innerHTML = "unshift(): " + arr + "<br><br>";
+
+    arr.splice(1,0,13,14);
+    document.getElementById("demo6").innerHTML = "splice(): add the value at the specified index: " + arr + "<br><br>";
+
+    arr.splice(0,3);
+    document.getElementById("demo7").innerHTML = "splice(): removes the specified number of elements form the beginning: " + arr + "<br><br>";
+
+    var e = arr.slice(6);
+    document.getElementById("demo8").innerHTML = "slice(): with single parameter will slice nad make the new array without removing elements form the original array<br>" + "original: " + arr + "  after slicing: " + e + "<br><br>";
+
+    var f = arr.slice(3,7);
+    document.getElementById("demo9").innerHTML = "slice(): with two parameters will slice till the specified end index without including it and make the new array without removing elements form the original array<br>" + "original: " + arr + "  after slicing: " + f + "<br><br>";
+
+    delete arr[5];
+    document.getElementById("demo10").innerHTML = "delete arr[5]: will not return with the empty space at that location:  " + arr;
+
+    document.getElementById("demo11").innerHTML = "arr[5]: after delete: " + arr[5];
+  </script>
+</body>
+
+</html>

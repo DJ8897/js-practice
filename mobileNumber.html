@@ -1,0 +1,22 @@
+<!-- Mobile Number -->
+<html>
+
+<body>
+  Enter number: <input type="text" id="no">
+  <br><br>
+  <button id="btn" onclick="checkPhn()">Click</button>
+
+  <p id="ans"></p>
+  <script>
+    function checkPhn() {
+      var no = document.getElementById("no").value;
+      var ptn = /\d{10}/g;
+      var result = ptn.test(no);
+      console.log(result);
+      //result.join('');
+      document.getElementById("ans").innerHTML = result;
+    }
+  </script>
+</body>
+
+</html>

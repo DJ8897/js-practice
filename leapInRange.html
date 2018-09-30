@@ -1,0 +1,61 @@
+<!-- Find the year is in a given range of years and also is it leap year or not  -->
+
+<html>
+
+<body>
+  Enter first range year: <input type="text"
+         id="startR">
+  <br><br>
+  Enter end range year: <input type="text"
+         id="endR">
+  <br><br>
+
+  Enter year: <input type="text"
+         id="yearE">
+  <br><br>
+
+  <button id="btn"
+          onclick="checkLeap()">Click to check</button>
+  <br><br>
+
+  <p id="ans"></p>
+  <p id="leapAns"></p>
+
+  <script>
+    function checkLeap() {
+      var startR = document.getElementById("startR").value;
+      var endR = document.getElementById("endR").value;
+      var yearE = document.getElementById("yearE").value;
+
+      if (startR > endR) {
+        if (yearE <= startR && yearE >= endR) {
+          document.getElementById('ans').innerHTML = 'Yup year is in range !!';
+          if (yearE % 4 === 0) {
+            document.getElementById('leapAns').innerHTML = 'Its leap';
+          }
+          else {
+            document.getElementById('leapAns').innerHTML = 'Oops!! Its not leap';
+          }
+        } else {
+          document.getElementById('ans').innerHTML = 'Oops!! Not in range.';
+        }
+      } else {
+        if (yearE >= startR && yearE <= endR) {
+          document.getElementById('ans').innerHTML = 'Yup year is in range !!';
+          if (yearE % 4 === 0) {
+            document.getElementById('leapAns').innerHTML = 'Its leap';
+          }
+          else {
+            document.getElementById('leapAns').innerHTML = 'Oops!! Its not leap';
+          }
+        } else {
+          document.getElementById('ans').innerHTML = 'Oops!! Not in range.';
+        }
+      }
+
+    }
+
+  </script>
+</body>
+
+</html>

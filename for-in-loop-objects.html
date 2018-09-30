@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <p id="demo">The output will be here !!!!</p>
+
+  <script>
+    var person = { fName: "jeny", lName: "desai", age: 21 };
+    var txt = "";
+    var x;
+
+    for (x in person)
+    {
+      txt += person[x] + " ";
+    }
+
+    document.getElementById("demo").innerHTML = txt;
+  </script>
+
+</body>
+
+</html>

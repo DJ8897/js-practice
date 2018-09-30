@@ -1,0 +1,38 @@
+<!--  Write a JavaScript function to get the value of the href, hreflang, rel, target, and type attributes of the specified link. -->
+<html>
+
+<body>
+  <a id="para" type="text/html" hreflang="en-us" rel="nofollow" target="_self" href="https://www.w3resource.com/">w3resource</a>
+
+  <button onclick="getAttributesAll()">Click here</button>
+
+  <p id="demo"></p>
+</body>
+
+<script>
+  function getAllAttributes() {
+    // var h = document.getElementById("para").getAttribute("href");
+    // var hl = document.getElementById("para").getAttribute("hreflang");
+    // var r = document.getElementById("para").getAttribute("rel");
+    // var t = document.getElementById("para").getAttribute("target");
+    // var ty = document.getElementById("para").getAttribute("type");
+
+    var r = document.getElementById("para").attributes; //console.log(r);
+    document.write(r);
+    var len = r.length; //console.log(len);
+
+    var a = Array.prototype.slice.call(r).forEach(function (item) {
+      // console.log(item.name + ': ' + item.value);
+      document.getElementById("demo").innerHTML += item.name + ': ' + item.value + "<br>";
+    });
+  }
+
+  function getAttributesAll() {
+    var link = document.getElementById("para").attributes;
+    for (i = 0; i < link.length; i++) {
+      document.getElementById("demo").innerHTML += link[i].name + " = " + link[i].value + "<br>";
+    }
+  }
+</script>
+
+</html>

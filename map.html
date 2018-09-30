@@ -1,0 +1,49 @@
+<!-- Match in array object -->
+
+<html>
+
+<body>
+  <p id="demo"></p>
+  <p id="demo1"></p>
+  <p id="demo2"></p>
+  <script>
+    var employee = [
+      { name: 'abc', lname: 'def', eid: '12' },
+      { name: 'jbfk', lname: 'jfguih', eid: '122' },
+      { name: 'ehuirh', lname: 'hegrui', eid: '123' },
+      { name: 'eufy', lname: 'iwhe9o', eid: '124' },
+      { name: 'jehfu', lname: 'jvbgui', eid: '125' }
+    ];
+
+    var no = [0, 4, 10, 5, 20];
+    // var n1 = [];
+    document.getElementById("demo1").innerHTML = no;
+    function displayName(value) {
+      const newvalue = value;
+      // value.fullname = value.name + " " + value.lname + "<br>";
+      //value.name = "Mr" + value.name;
+      if (value.eid === '12') {
+        return value;
+      }
+      // return value;
+    }
+    function addNumbers(value, index, array) {
+      // n1.push(value + 5);
+      return value + 5;
+      // console.log(value);
+      // console.log(index);
+      // console.log(array);
+    }
+    var arr = employee.map(displayName);
+    console.log(employee);
+    console.log(arr);
+    var n1 = no.map(addNumbers);
+    console.log(no);
+    console.log(n1);
+
+    document.getElementById("demo").innerHTML = arr; //employee[0].fullname
+    document.getElementById("demo2").innerHTML = n1;
+  </script>
+</body>
+
+</html>

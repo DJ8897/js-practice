@@ -1,0 +1,37 @@
+<!-- Write a JavaScript function to add rows to a table. -->
+
+<html>
+
+<body>
+  <table id="sampleTable" border="1" style="width:50%">
+    <tr>
+      <td>Row1 cell1</td>
+      <td>Row1 cell2</td>
+    </tr>
+    <tr>
+      <td>Row2 cell1</td>
+      <td>Row2 cell2</td>
+    </tr>
+  </table><br>
+  <button id="btn" onclick="insert_Row()">Insert row</button>
+
+  <script>
+    function insert_Row() {
+      var t = document.getElementById("sampleTable");
+      var row = t.insertRow(2);
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+
+      cell1.innerHTML = "New Cell1";
+      cell2.innerHTML = "New Cell2";
+
+    } 
+    
+    // try to implement using appendChild method
+    // function rowInsert(){
+    //   var tr = document.get
+    // }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!-- not working properly -->
+
+<html>
+
+<body onload="promptName()">
+
+
+  <script type="text/javascript">
+    function promptName() {
+      var userName = prompt("What's your name ?", "")
+      return userName;
+    }
+
+    function goodBye() {
+      alert("Goodbye, " + promptName() + "!");
+    }
+
+    window.onunload = goodBye();
+
+  </script>
+
+</body>
+
+</html>

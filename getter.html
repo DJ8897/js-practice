@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<!-- use of getter and setter methods in js -->
+
+<body>
+
+  <p id="demo">Write here</p>
+
+  <script>
+    var person = {
+      name: "Jeny",
+      lname: "desai",
+      age: 20,
+
+      get ages() {
+        return this.age;
+      }
+    };
+
+    document.getElementById("demo").innerHTML = person.ages;
+  </script>
+
+</body>
+
+</html>

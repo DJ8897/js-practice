@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> USE OF SETTER METHODS IN JAVASCRIPT </title>
+</head>
+
+<body>
+
+  <h1> USE OF SETTER METHODS IN JAVASCRIPT </h1>
+  <p id="demo">Write here</p>
+
+  <script>
+    var person = {
+      name: "jeny",
+      lname: "desai",
+      age: "",
+      set ages(age1) {
+        this.age = age1;
+      }
+    };
+
+    person.ages = 30;
+
+    document.getElementById("demo").innerHTML = person.age;
+  </script>
+</body>
+
+</html>

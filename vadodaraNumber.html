@@ -1,0 +1,32 @@
+<!-- number plate for india -->
+
+<html>
+
+<body>
+  Enter number plate: <input type="text" id="plt">
+  <button id="btn" onclick="checkPlate()">Click</button>
+
+  <h4 id="ans"></h4>
+
+  <script>
+    function checkPlate() {
+      var str = document.getElementById("plt").value;
+      //var ptn = /^[GJ]\s[06]\s[A-Z]{2}\s[0-9]{4}$/g; // for vadoadra only
+      // var ptn = /^[A-Z]{2}\s[0-9]{2}\s[A-Z]{2}\s[0-9]{4}$/g; // for india
+
+     // var ptn = /^[A-z0-9_.-]+@[A-z]+\.[A-z]/g;
+
+     //var ptn = /^(\+91|0|0091)?\d{10}$/g;
+
+     //var ptn = /^(\+1)?\d{10}$/g;
+
+    var ptn = /^((0091)|(\+91)|0?)\d{10}$/g;
+      var res = ptn.test(str);
+      console.log(str.match(ptn));
+      document.getElementById("ans").innerHTML = res;
+
+    }
+  </script>
+</body>
+
+</html>

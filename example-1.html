@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <h2>JavaScript Arrays</h2>
+
+  <p>JavaScript array elements are accesses using numeric indexes (starting from 0).</p>
+
+  <p id="demo"></p>
+  <p id="demo1"></p>
+  <p id="demo2"></p>
+  <p id="demo3"></p>
+  <p id="demo4"></p>
+  <p id="demo5"></p>
+  <p id="demo6"></p>
+  <p id="demo7"></p>
+  <p id="demo8"></p>
+  <p id="demo9"></p>
+  <p id="demo10"></p>
+
+  <script>
+    var fruits = ["Banana", "Orange", "Apple", "Mango", "Chickoo", "Grapes", "Pineapple", "Custard Apple", "Guava", "Strawberry"];
+    document.getElementById("demo").innerHTML = fruits[0];
+
+    for (i = 1; i <= 10; i++) {
+      document.getElementById("demo1").innerHTML += i + " ";
+    }
+    document.getElementById("demo2").innerHTML = fruits;
+
+    for (i = 0; i < fruits.length; i++) {
+      if ((i + 1) % 2 == 0) {
+        document.getElementById("demo3").innerHTML += fruits[i] + "<br>";
+      }
+    }
+
+    fruits.forEach(function (value) { document.getElementById("demo4").innerHTML += value + "<br>"; });
+
+    fruits.push("Pear");
+    document.getElementById("demo5").innerHTML = fruits;
+
+    fruits[fruits.length-1] = "Pear";
+    document.getElementById("demo6").innerHTML = fruits;
+
+    fruits[13] = "Pear";
+    document.getElementById("demo7").innerHTML = fruits;
+
+    document.getElementById("demo8").innerHTML = typeof fruits;
+
+    document.getElementById("demo9").innerHTML = Array.isArray(fruits);
+
+    document.getElementById("demo10").innerHTML = toString.call(fruits);  // returns [object Array]
+  </script>
+
+</body>
+
+</html>

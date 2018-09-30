@@ -1,0 +1,36 @@
+<!-- There are two arrays with individual values, write a JavaScript program to compute the sum of each individual index value from the given arrays.
+Sample array : 
+array1 = [1,0,2,3,4];
+array2 = [3,5,6,7,8,13];
+Expected Output : 
+[4, 5, 8, 10, 12, 13] -->
+
+<html>
+
+<body>
+  <p id="arr1"></p>
+  <p id="arr2"></p>
+  <p id="ans"></p>
+
+  <script>
+    var arr1 = [1, 1, 1, 1, 1];
+    var arr2 = [1, 1, 1, 1];
+
+    document.getElementById("arr1").innerHTML = "First Array: " + arr1;
+    document.getElementById("arr2").innerHTML = "Second Array: " + arr2;
+
+    var ans = [];
+    var a, b;
+    for (i = 0; i < arr2.length; i++) {
+      a = arr1[i] ? arr1[i] : 0;
+      b = arr2[i] ? arr2[i] : 0;
+
+      ans[i] = a + b;
+      //ans[i] = arr1[i] + arr2[i];
+    }
+    document.getElementById("ans").innerHTML = "Addition of respective indexes: " + ans;
+
+  </script>
+</body>
+
+</html>

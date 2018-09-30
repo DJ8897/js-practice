@@ -1,0 +1,29 @@
+<!-- Palindrome string -->
+
+<html>
+
+<body>
+  Enter string: <input type="text" id="inputS">
+  <button id="btn" onclick="chechPali()">Click here to check</button>
+  <h4 id="ans"></h4>
+  <script>
+    function chechPali() {
+      var val = document.getElementById("inputS").value;     //console.log(val);
+      var low = val.toLowerCase();      //console.log(low);
+      var ptn = /[\W_]/g;      //var result = low.match(ptn);
+      var result = low.replace(ptn, '');      //console.log(result);
+      var s = result.split('');      //console.log(s);
+      var rev = s.reverse();      //console.log(rev);
+      var j = rev.join('');      //console.log(j);
+
+      if (result === j) {
+        document.getElementById("ans").innerHTML = val + " is palindrome.";
+      }
+      else {
+        document.getElementById("ans").innerHTML = val + " is not palindrome.";
+      }
+    }
+  </script>
+</body>
+
+</html>
