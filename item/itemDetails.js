@@ -91,14 +91,14 @@ function addItemDetailsRow(item) {
 function editItemDetails(button) {
   const rowIndexValue = button.parentNode.parentNode.rowIndex;
 
-  const item = itemDetails[rowIndexValue - 1];
+  const item = itemDetails[rowIndexValue - 1];    // in array it at one less position so -1 and we will get the whole value of the array
 
   document.getElementById('itemNameInput').value = item.itemName;
   document.getElementById('itemCategoryInput').value = item.itemCategory;
   document.getElementById('itemRetailPriceInput').value = item.itemRetailPrice;
   document.getElementById('itemWholesalePriceInput').value = item.itemWholesalePrice;
 
-  itemDetailsIndex = rowIndexValue - 1;
+  itemDetailsIndex = rowIndexValue - 1;     // same as above just we are saving the index for the update functionality here we will get the index only pointing to array only
 
   document.getElementById('updateItemBtn').style.visibility = 'visible';
   document.getElementById('addItemBtn').style.visibility = 'hidden';

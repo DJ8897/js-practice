@@ -11,7 +11,7 @@ let countryCodes = [
 resetEmployeeForm();
 countryCodesSelection();
 
-function validateEmployee(fName, lName, designation, age, country, mobileNo, emailAddress) {
+function validateEmployee(fName, lName, designation, age, mobileNo, emailAddress) {
   let isError = false;
   if (fName === '') {
     document.getElementById('fNameValidation').style.visibility = 'visible';
@@ -33,11 +33,6 @@ function validateEmployee(fName, lName, designation, age, country, mobileNo, ema
     isError = true;
   }
 
-  // if (country === '') {
-  //   errorMessage += 'Please enter country \n';
-  //   isError = true;
-  // }
-
   if (mobileNo === '') {
     document.getElementById('mobileNoValidation').style.visibility = 'visible';
     document.getElementById('mobileNoValidation').innerHTML = 'Please enter mobile no';
@@ -50,6 +45,8 @@ function validateEmployee(fName, lName, designation, age, country, mobileNo, ema
       isError = true;
     }
   }
+
+  console.log(mobileNo);
 
   // if (emailAddress !== '') {
   //   const ptn = /^[A-z0-9_.-]+@[A-z]+\.[A-z]+/g;
@@ -64,6 +61,7 @@ function validateEmployee(fName, lName, designation, age, country, mobileNo, ema
     document.getElementById('emailAddressValidation').style.visibility = 'visible';
     isError = true;
   }
+  console.log(emailAddress);
 
   if (isError) {
     return false;
@@ -73,17 +71,17 @@ function validateEmployee(fName, lName, designation, age, country, mobileNo, ema
 
 function countryCodesSelection() {
   let country = document.getElementById('country').value;
-  console.log(country);
+  // console.log(country);
 
-  const countryValues = countryCodes.filter(function(value) {
+  const countryValues = countryCodes.find(function(value) {
     return value.country === country;
   });
-  console.log(Array.isArray(countryValues));
-  document.getElementById('countryCodeLabel').innerHTML = countryValues[0].code;
+  // console.log(Array.isArray(countryValues));
+  document.getElementById('countryCodeLabel').innerHTML = countryValues.code;
 }
 
 function allowNumbers(event) {
-  console.log(event.key);
+  // console.log(event.key);
   if (event.which > 31 && (event.which < 48 || event.which > 57)) {
     return false;
   }
@@ -125,7 +123,7 @@ function deleteEmployee(index) {
   const rowIndexValue = index.parentNode.parentNode.rowIndex;
   table.deleteRow(rowIndexValue);
   Employees.splice(rowIndexValue - 1, 1);
-  console.log(Employees);
+  // console.log(Employees);
 }
 
 function editEmployee(index) {
@@ -148,7 +146,7 @@ function editEmployee(index) {
   document.getElementById('submitEmployee').style.visibility = 'hidden';
 }
 
-function updateEmployee() {
+function updateEmployees() {
   const title = document.getElementById('title').value;
   const fName = document.getElementById('fName').value;
   const lName = document.getElementById('lName').value;
@@ -158,7 +156,10 @@ function updateEmployee() {
   const mobileNo = document.getElementById('mobileNo').value;
   const emailAddress = document.getElementById('emailAddress').value;
 
-  if (validateEmployee(fName, lName, designation, age, country, mobileNo, emailAddress)) {
+  console.log(mobileNo);
+  console.log(emailAddress);
+
+  if (validateEmployee(fName, lName, designation, age, mobileNo, emailAddress)) {
     const employee = Employees[employeeIndex];
 
     Employees[employeeIndex].title = title;
@@ -189,7 +190,7 @@ function submitEmployee() {
 
   // let errorMessage='';
 
-  if (validateEmployee(fName, lName, designation, age, country, mobileNo, emailAddress)) {
+  if (validateEmployee(fName, lName, designation, age, mobileNo, emailAddress)) {
     const employee = {
       title,
       fName,
@@ -215,7 +216,7 @@ function submitEmployee() {
 function resetEmployeeForm() {
   document.getElementById('employeeForm').reset();
 
-  document.getElementById('updateEmployee').style.visibility = 'hidden';
+  document.getElementById('updateEmployee').style.visibility = 'hidden';  
   document.getElementById('submitEmployee').style.visibility = 'visible';
 
   document.getElementById('fNameValidation').style.visibility = 'hidden';

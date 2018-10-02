@@ -1,0 +1,42 @@
+<html>
+  <body>
+    <h3>Purchase Details Form</h3>
+    <form id="purchaseDetailsForm">
+      First Name: <input type="text" id="firstNameInput">
+      <label id="firstNameValidate">Please enter first name</label>
+      <br><br>
+      Last Name: <input type="text" id="lastNameInput">
+      <label id="lastNameValidate">Please enter last name</label>
+      <br><br>
+      Country: <select id="countryInput" onchange="selectedCountryCode()">
+        <option>India</option>
+        <option>UK</option>
+      </select>
+      <br><br>
+      Mobile Number: <label id="countryCodeLabel"></label><input type="text" id="mobileNoInput" onkeypress="return isNumber(event, 'mobileNo')">
+      <label id="mobileNoValidate"></label>
+      <br><br>
+      Item Price: <input type="text" id="itemPriceInput" onkeypress="return isNumber(event, 'purchasePrice')">
+      <label id="itemPriceValidate">Please enter item price</label>
+      <br><br>
+    </form>
+
+    <button id="addPurchaseDetailsBtn" onclick="addPurchaseDetails()">Add</button>
+    <button id="updatePurchaseDetailsBtn" onclick="updatePurchaseDetails()">Update</button>
+    <button id="resetPurchaseDetailsBtn" onclick="resetPurchaseDetailsForm()">Reset</button>
+    <br><br>
+
+    <table id="purchaseDetailsTable" border="1" width="100%">
+      <tr>
+        <th id="purchaseName">Name</th>
+        <th id="purchaseCountry">Country</th>
+        <th id="purchaseMobileNo">Mobile Number</th>
+        <th id="purchasePrice">Item Price</th>
+        <th id="editPurchase">Edit</th>
+        <th id="deletePurchase">Delete</th>
+      </tr>
+    </table>
+
+    <script src="purchaseDetails.js"></script>
+  </body>
+</html>
