@@ -28,3 +28,12 @@ Start Date: 14/08/2012
 End Date: 20/08/2012	Output:
 Tom has applied for leave of 4 days.
 
+===================
+Ek form banav
+Jema 4 input fields hoy.
+1. Employee Name
+2. Manager Name
+3. Start Date
+4. End Date
+nd 2 button add kar
+Calculate Leave & Reset
