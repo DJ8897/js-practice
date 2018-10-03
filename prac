@@ -131,3 +131,7 @@ function addLeaveApplication(){
   }
   console.log('nope');
 }
+========================================
+https://stackoverflow.com/questions/3224834/get-difference-between-2-dates-in-javascript
+
+link jy tane date no difference find karvanu logic malyu - pu6e to avu kehje
