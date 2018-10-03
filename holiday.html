@@ -1,0 +1,24 @@
+<html>
+
+<body>
+	<form id="leaveApplicationForm">
+		Employee Name: <input type="text" id="employeeNameInput" onfocusout="this.value=this.value.toTitleCase()">
+		<label id="validateEmployeeName">Please enter employee name</label>
+		<br><br>
+		Manager Name: <input type="text" id="managerNameInput" onfocusout="this.value=this.value.toTitleCase()">
+		<label id="validateManagerName">Please enter manager name</label>
+		<br><br>
+		Start Date: <input type="text" id="startDateInput">
+		<label id="validateStartDate"></label>
+		<br><br>
+		End Date: <input type="text" id="endDateInput">
+		<label id="validateEndDate">Please enter end date</label>
+		<br><br>
+	</form>
+
+	<button id="calculateLeaveBtn" onclick="addLeaveApplication()">Calculate Leave</button>
+	<button id="resetLeaveFormButton" onclick="resetLeaveApplicationForm()">Reset</button>
+	<script src="leaveApplication.js"></script>
+</body>
+
+</html>
