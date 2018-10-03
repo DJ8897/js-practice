@@ -1,0 +1,30 @@
+JavaScript Program Definition (2 hours):
+Create an application for calculating the leave. The leave application form will take following parameters:
+The Leave has following attributes:
+Employee Name
+Manager Name
+Start Date
+End Date
+The number of leaves calculated must not consider the holidays and weekends (Saturday and Sunday). Holiday list is provided below. We should be able to display/hide holiday list whenever requested.
+The list of holidays is:
+Sr. No.	Month	Date
+1	January	26
+2	March	8
+3	August	2
+4	August	15
+5	August	20
+6	September	19
+7	October	24
+8	November	13
+9	November	14
+10	December	25
+
+
+Example
+Input:
+Employee Name: Tom
+Manager Name: Michael
+Start Date: 14/08/2012
+End Date: 20/08/2012	Output:
+Tom has applied for leave of 4 days.
+
