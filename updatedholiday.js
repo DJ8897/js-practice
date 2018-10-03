@@ -35,7 +35,7 @@ function validateLeaveApplicationInputs(leaveApplicationInputs) {
     document.getElementById('validateEndDate').style.visibility = 'visible';
     document.getElementById('validateEndDate').innerHTML = 'Please enter end date';
     isError = true;
-  } else{
+  } else {
     const date2 = new Date(leaveApplicationInputs.endDate);
     if (date2.toString() === 'Invalid Date') {
       document.getElementById('validateEndDate').style.visibility = 'visible';
@@ -57,13 +57,14 @@ function validateLeaveApplicationInputs(leaveApplicationInputs) {
 //   }
 //   console.log('nope');
 // }
-function addLeaveApplication(){
+function addLeaveApplication() {
+  const leaveApplicationInputs = getLeaveApplicationValues();
   if (validateLeaveApplicationInputs(leaveApplicationInputs)) {
     var startDate = new Date(leaveApplicationInputs.startDate); // date format must be in mm/DD/yyyy, avu label muki deje date fields ni niche
     var endDate = new Date(leaveApplicationInputs.endDate);
-    var diffDays = parseInt((date2 - date1) / (1000 * 60 * 60 * 24));
+    var diffDays = parseInt((endDate - startDate) / (1000 * 60 * 60 * 24));
     console.log(diffDays);
-    alert(leaveApplicationInputs.employeeName + 'has applied for leave of ' + diffDays + ' days.');
+    alert(leaveApplicationInputs.employeeName + ' has applied for leave of ' + diffDays + ' days.');
   }
   console.log('nope');
 }
