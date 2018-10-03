@@ -1,0 +1,29 @@
+<html>
+  <body>
+    <h3>Invoice Generator</h3>
+    <form id="invoiceGenerator">
+      Item Name: <input type="text" id="itemNameInput">
+      <label id="validateItemName">Please enter item name</label>
+      <br><br>
+      Category: <select id="itemCategoryInput" onchange="calculateGst()">
+        <option>Clothes</option>
+        <option>Snacks</option>
+        <option>Vegetables</option>
+        <option>Fruits</option>
+      </select>
+      <br><br>
+      Price: <input type="text" id="itemPriceInput" onfocusout="calculateGst()">
+      <label id="validateItemPrice">Please enter item price</label>
+      <br><br>
+      GST: <input type="text" id="itemGstInput" disabled> 
+      <!-- <label>(8% GST on the item price)</label> -->
+      <br><br>
+      Total: <input type="text" id="itemTotalPriceInput" disabled>
+      <br><br>
+    </form>
+
+    <button id="generateInvoiceBtn">Generate</button>
+    <button id="resetInvoiceForm">Reset</button>
+    <script src="taxCalculator.js"></script>
+  </body>
+</html>
