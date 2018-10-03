@@ -64,3 +64,59 @@ function validateInputs() {
         }
     }
 }
+
+
+=====================================================================
+resetLeaveApplicationForm();
+
+function getLeaveApplicationValues() {
+  const employeeName = document.getElementById('employeeNameInput').value;
+  const managerName = document.getElementById('managerNameInput').value;
+  const startDate = document.getElementById('startDateInput').value;
+  const endDate = document.getElementById('endDateInput').value;
+
+  return { employeeName, managerName, startDate, endDate };
+}
+
+function validateLeaveApplicationInputs(leaveApplicationInputs) {
+  let isError = false;
+  if(leaveApplicationInputs.employeeName === ''){
+    document.getElementById('validateEmployeeName').style.visibility = 'visible';
+    isError =true;
+  }
+  if(leaveApplicationInputs.managerName === ''){
+    document.getElementById('validateManagerName').style.visibility = 'visible';
+    isError =true;
+  }
+  if(leaveApplicationInputs.startDate === ''){
+    document.getElementById('validateStartDate').style.visibility = 'visible';
+    isError =true;
+  }
+  if(leaveApplicationInputs.endDate === ''){
+    document.getElementById('validateEndDate').style.visibility = 'visible';
+    isError =true;
+  }
+
+  if(isError){
+    return false;
+  }
+  return true;
+}
+
+function addLeaveApplication(){
+  if( validateLeaveApplicationInputs(leaveApplicationInputs)){
+    console.log('hi');
+  }
+  console.log('nope');
+}
+function resetLeaveApplicationForm() {
+  document.getElementById('resetLeaveFormButton').reset();
+
+  document.getElementById('validateEmployeeName').style.visibility = 'hidden';
+  document.getElementById('validateManagerName').style.visibility = 'hidden';
+  document.getElementById('validateStartDate').style.visibility = 'hidden';
+  document.getElementById('validateEndDate').style.visibility = 'hidden';
+}
+
+
+nai chaltu maru nai kabar kem
