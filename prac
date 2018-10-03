@@ -37,3 +37,30 @@ Jema 4 input fields hoy.
 4. End Date
 nd 2 button add kar
 Calculate Leave & Reset
+
+Validate() function logic - add iserror and error message visiblity to display error message in html form, input field ni baju ma display karva
+
+function validateInputs() {
+    if(empName === ''){
+		// emp error
+    }
+	if(managerName === ''){
+        // manager name error
+    }
+	if(startDate === ''){
+		// start date error
+    } else{
+		const date1 = new Date(startDate);
+		if(date1.toString() === 'Invalid Date') {
+			// err start date invalid
+        }
+    }
+	if(endDate === ''){
+		// end date error
+    } else{
+		const date1 = new Date(endDate);
+		if(date1.toString() === 'Invalid Date') {
+			// err end date invalid
+        }
+    }
+}
