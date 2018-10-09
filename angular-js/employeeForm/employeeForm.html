@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+  <title>Employee Form</title>
+  <!-- <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous"> -->
+</head>
+
+<body ng-controller="employeeFormController">
+
+  <form name="employeeForm">
+    <h3>Employee Form</h3>
+    First Name: <input type="text"
+           name="firstName"
+           ng-model="employee.firstName"
+           ng-required="true">
+    <span ng-show="employeeForm.firstName.$touched && employeeForm.firstName.$error.required">First name required</span>
+    <br><br>
+
+    Last Name: <input type="text"
+           name="lastName"
+           ng-model="employee.lastName"
+           ng-required="true">
+    <span ng-show="employeeForm.lastName.$touched && employeeForm.lastName.$error.required">Last Name required</span>
+    <br><br>
+
+    Mobile No: <input type="text"
+           name="mobile"
+           ng-model="employee.mobile"
+           ng-required="true"
+           ng-pattern="/^\d{10}/g">
+    <span ng-show="employeeForm.mobile.$touched && employeeForm.mobile.$error.required">Mobile no required</span>
+    <span ng-show="employeeForm.mobile.$touched && employeeForm.mobile.$error.pattern">Mobile no must be of 10 digits</span>
+    <br><br>
+
+    Email Address: <input type="email"
+           name="emailAddress"
+           ng-model="employee.emailAddress"
+           ng-required="true">
+    <span ng-show="employeeForm.emailAddress.$touched && employeeForm.emailAddress.$error.required">Email Address
+      required</span>
+    <span ng-show="employeeForm.emailAddress.$touched && employeeForm.emailAddress.$invalid">Email Address</span>
+    <br><br>
+  </form>
+
+  <div>
+    <button ng-disabled="employeeForm.$invalid"
+            ng-click="addEmployee()"
+            ng-show="employeeDetailIndex === -1">Add</button>
+    <button ng-disabled="employeeForm.$invalid"
+            ng-click="updateEmployee()"
+            ng-show="employeeDetailIndex !== -1">Update</button>
+    <button ng-click="resetEmployeeForm()">Reset</button>
+    <br><br>
+  </div>
+
+  <table width="100%"
+         border="1"
+         ng-show="employeeDetails.length !== 0">
+    <tr>
+      <th>Name</th>
+      <th>Mobile No</th>
+      <th>Email Address</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+
+    <tr ng-repeat="employeeDetail in employeeDetails">
+      <td>{{employeeDetail.firstName}} {{employeeDetail.lastName}}</td>
+      <td>{{employeeDetail.mobile}}</td>
+      <td>{{employeeDetail.emailAddress}}</td>
+      <td><button ng-click="editEmployeeDetail()">Edit</button></td>
+      <td><button ng-click="deleteEmployeeDetail()">Delete</button></td>
+    </tr>
+  </table>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="./app/app.js"></script>
+  <script src="./app/employeeForm.js"></script>
+</body>
+
+</html>
