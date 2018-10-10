@@ -1,1 +1,8 @@
 create a todo service and save the list in a json file todo should have properties id,title,complete,priority
+
+Simply create a simple form with 3 fields 
+title,complete,priority
+
+and add in array, how we have done in employee form
+
+then display added to do task in table
