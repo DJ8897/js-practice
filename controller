@@ -1,0 +1,28 @@
+angular.module('todoModule').controller('todoListController', [
+  '$scope',
+  function($scope) {
+    $scope.tasks = [
+      { work: 'learn angular', completed: true },
+      { work: 'build an angular app', completed: false }
+    ];
+
+    $scope.addTodo = function() {
+      $scope.tasks.push({ work: $scope.todoWork, completed: false });
+      $scope.todoWork = '';
+    };
+
+    $scope.pending = function() {
+      let count = 0;
+
+      angular.forEach($scope.tasks, function(todo) {
+        count += todo.completed ? 0 : 1;
+      });
+
+      return count;
+    };
+
+    // $scope.deleteTodoTask = function() {
+    //   $scope.tasks.splice(this.$index, 1);
+    // };
+  }
+]);
