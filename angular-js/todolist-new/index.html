@@ -1,23 +1,31 @@
 <html ng-app="toDoApp">
-  <head>
-    <title>To do app</title>
-    <style rel="stylesheet" href="todo.css"></style>
-  </head>
-  <body ng-controller="toDoController">
-    <li ng-repeat="toDo in toDoDetails">
-      <input type="checkbox" ng-model="toDo.completed">
-      <span class="completed-{{toDo.completed}}">{{toDo.title}} - {{toDo.priority}}</span>
-    </li>
-    <form name="toDoForm">
-      <input type="text" ng-model="toDoModel.title"/>
-      <select name="priority" ng-model="toDoModel.priority">
-        <option>LOW</option>
-        <option>MEDIUM</option>
-        <option>HIGH</option>
-      </select>
-      <button ng-click="addToDo()">Add</button>
-    </form>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
-    <script src="todo.js"></script>
-  </body>
+
+<head>
+  <title>To do app</title>
+  <style rel="stylesheet"
+         href="todo.css"></style>
+</head>
+
+<body ng-controller="toDoController">
+  <span>{{pending()}} of {{toDoDetails.length}} pending</span>
+  <li ng-repeat="toDo in toDoDetails">
+    <input type="checkbox"
+           ng-model="toDo.completed">
+    <span class="completed-{{toDo.completed}}">{{toDo.title}} - {{toDo.priority}}</span>
+  </li>
+  <form name="toDoForm">
+    <input type="text"
+           ng-model="toDoModel.title" />
+    <select name="priority"
+            ng-model="toDoModel.priority">
+      <option>LOW</option>
+      <option>MEDIUM</option>
+      <option>HIGH</option>
+    </select>
+    <button ng-click="addToDo()">Add</button>
+  </form>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+  <script src="todo.js"></script>
+</body>
+
 </html>
