@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="todoModule">
+
+<head>
+  <title>Todo List</title>
+  <style>
+    .completed-true {
+      text-decoration: line-through;
+      color: grey;
+    }
+  </style>
+</head>
+
+<body ng-controller="todoListController">
+  <div class="container">
+    <h3>Todo</h3>
+
+    <span>{{pending()}} of {{tasks.length}} pending</span>
+
+    <ul>
+      <li ng-repeat="todo in tasks track by $index">
+        <input type="checkbox"
+          ng-model="todo.completed">
+        <span class="completed-{{todo.completed}}">{{todo.work}}</span>
+      </li>
+    </ul>
+    <input ng-model="todoWork" size="30" placeholder="Add new todo here">
+    <button ng-click="addTodo()">Add</button>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="./app/app.js"></script>
+  <script src="./app/todoController.js"></script>
+</body>
+
+</html>
