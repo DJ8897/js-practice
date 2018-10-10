@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+  <title>Item Details</title>
+</head>
+
+<body ng-controller="itemDetailsController">
+  <h3>Item Details Form</h3>
+
+  <form name="itemDetailsForm">
+    Item Name: <input type="text"
+           name="itemName"
+           ng-model="itemDetail.itemName"
+           ng-required="true"
+           onfocusout="this.value = this.value.toTitleCase()">
+    <span ng-show="itemDetailsForm.itemName.$touched && itemDetailsForm.itemName.$error.required">Please enter item
+      name</span>
+    <br><br>
+
+    Category: <select name="itemCategory"
+            ng-model="itemDetail.itemCategory"
+            ng-required="true">
+      <option></option>
+      <option>Clothing</option>
+      <option>Swimwear</option>
+      <option>Lingerie</option>
+    </select>
+    <span ng-show="itemDetailsForm.itemCategory.$touched && itemDetailsForm.itemCategory.$error.required">Please enter
+      item category</span>
+    <br><br>
+
+    Price: <input type="text"
+           name="itemPrice"
+           ng-model="itemDetail.itemPrice"
+           ng-required="true"
+           ng-blur="calculateGst()">
+    <span ng-show="itemDetailsForm.itemPrice.$touched && itemDetailsForm.itemPrice.$error.required">Please enter item
+      price</span>
+    <br><br>
+
+    GST: <input type="text"
+           name="itemGst"
+           ng-model="itemDetail.itemGst"
+           ng-disabled="true">
+    <br><br>
+
+    Total: <input type="text"
+           name="itemTotal"
+           ng-model="itemDetail.itemTotal"
+           ng-disabled="true">
+    <br><br>
+  </form>
+
+  <div>
+    <button ng-click="addItemDetails()"
+            ng-disabled="itemDetailsForm.$invalid"
+            ng-show="itemDetailIndex === -1">Add details</button>
+    <button ng-click="updateItemDetail()"
+            ng-disabled="itemDetailsForm.$invalid"
+            ng-show="itemDetailIndex !== -1">Update details</button>
+    <button ng-click="resetItemDetails()">Reset Form</button>
+    <br><br>
+  </div>
+
+  <table width="100%"
+         border="1"
+         ng-show="item.length !==0">
+    <tr>
+      <th>Item Name - Category</th>
+      <th>Price</th>
+      <th>GST</th>
+      <th>Total</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+
+    <tr ng-repeat="itemData in item">
+      <td>{{itemData.itemName}} - {{itemData.itemCategory}}</td>
+      <td>{{itemData.itemPrice}}</td>
+      <td>{{itemData.itemGst}}</td>
+      <td>{{itemData.itemTotal}}</td>
+      <td><button ng-click="editItemDetails()">Edit</button></td>
+      <td><button ng-click="deleteItemDetail()">Delete</button></td>
+    </tr>
+  </table>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="./app/app.js"></script>
+  <script src="./app/itemDetailsController.js"></script>
+</body>
+
+</html>
