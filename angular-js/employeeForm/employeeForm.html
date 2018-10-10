@@ -46,7 +46,7 @@
            ng-pattern="/^[A-z0-9_.-]+@[A-z]+\.[A-z]+/g">
     <span ng-show="employeeForm.emailAddress.$touched && employeeForm.emailAddress.$error.required">Email Address
       required</span>
-    <span ng-show="employeeForm.emailAddress.$touched && employeeForm.emailAddress.pattern">Email Address must be of
+    <span ng-show="employeeForm.emailAddress.$touched && employeeForm.emailAddress.$error.pattern">Email Address must be of
       abc@xyz.pqr</span>
     <br><br>
   </form>
