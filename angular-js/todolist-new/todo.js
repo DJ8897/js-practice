@@ -2,22 +2,25 @@ var app = angular.module('toDoApp', []);
 
 app.controller('toDoController', [
   '$scope',
-  function($scope) {
+  'toDoService',
+  function($scope, toDoService) {
     $scope.toDoDetails = [];
     $scope.toDoModel = {};
 
     $scope.addToDo = function() {
       $scope.toDoDetails.push({ title: $scope.toDoModel.title, priority: $scope.toDoModel.priority, completed: false });
+
+      toDoService.addToDo($scope.toDoModel);
       $scope.toDoModel = {};
     };
 
-    // $scope.remaining = function() {
-    //   var count = 0;
-    //   angular.forEach($scope.todos, function(todo) {
-    //     count += todo.done ? 0 : 1;
-    //   });
-    //   return count;
-    // };
+    $scope.pending = function() {
+      let count = 0;
+      angular.forEach($scope.toDoDetails, function(todo) {
+        count += todo.completed ? 0 : 1;
+      });
+      return count;
+    };
 
     $scope.archive = function() {
       var oldToDoDetails = $scope.toDoDetails;
@@ -28,3 +31,12 @@ app.controller('toDoController', [
     };
   }
 ]);
+
+app.service('toDoService', function() {
+  const toDoDetails = [];
+
+  this.addToDo = function(toDoModel) {
+    console.log('called');
+    toDoDetails.push(toDoModel);
+  };
+});
