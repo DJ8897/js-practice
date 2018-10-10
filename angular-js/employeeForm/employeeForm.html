@@ -16,14 +16,16 @@
     First Name: <input type="text"
            name="firstName"
            ng-model="employee.firstName"
-           ng-required="true">
+           ng-required="true"
+           onfocusout="this.value = this.value.toTitleCase()">
     <span ng-show="employeeForm.firstName.$touched && employeeForm.firstName.$error.required">First name required</span>
     <br><br>
 
     Last Name: <input type="text"
            name="lastName"
            ng-model="employee.lastName"
-           ng-required="true">
+           ng-required="true"
+           onfocusout="this.value = this.value.toTitleCase()">
     <span ng-show="employeeForm.lastName.$touched && employeeForm.lastName.$error.required">Last Name required</span>
     <br><br>
 
@@ -31,18 +33,21 @@
            name="mobile"
            ng-model="employee.mobile"
            ng-required="true"
-           ng-pattern="/^\d{10}/g">
+           ng-pattern="/^\d{10}/g"
+           ng-keypress="isNumber($event)">
     <span ng-show="employeeForm.mobile.$touched && employeeForm.mobile.$error.required">Mobile no required</span>
     <span ng-show="employeeForm.mobile.$touched && employeeForm.mobile.$error.pattern">Mobile no must be of 10 digits</span>
     <br><br>
 
-    Email Address: <input type="email"
+    Email Address: <input type="text"
            name="emailAddress"
            ng-model="employee.emailAddress"
-           ng-required="true">
+           ng-required="true"
+           ng-pattern="/^[A-z0-9_.-]+@[A-z]+\.[A-z]+/g">
     <span ng-show="employeeForm.emailAddress.$touched && employeeForm.emailAddress.$error.required">Email Address
       required</span>
-    <span ng-show="employeeForm.emailAddress.$touched && employeeForm.emailAddress.$invalid">Email Address</span>
+    <span ng-show="employeeForm.emailAddress.$touched && employeeForm.emailAddress.pattern">Email Address must be of
+      abc@xyz.pqr</span>
     <br><br>
   </form>
 
